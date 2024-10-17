@@ -67,7 +67,7 @@ public class SwerveSubsystem extends SwerveDrivetrain implements Subsystem {
             factory.createModuleConstants(6, 2, 10, 0.311767578125, moduleX, -moduleY, true),
 
             // back left
-            factory.createModuleConstants(7, 3, 11, 0.311767578125, -moduleX, moduleY, false),
+            factory.createModuleConstants(7, 3, 11, -0.211669921875, -moduleX, moduleY, false),
 
             // back right
             factory.createModuleConstants(8, 4, 12, 0.0732421875, -moduleX, -moduleY, true)
