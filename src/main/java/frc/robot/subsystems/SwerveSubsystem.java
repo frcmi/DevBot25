@@ -20,7 +20,7 @@ import edu.wpi.first.wpilibj2.command.Subsystem;
 
 import frc.robot.Robot;
 
-public class SwerveSubsystem extends SwerveDrivetrain implements Subsystem {
+public final class SwerveSubsystem extends SwerveDrivetrain implements Subsystem {
     public static SwerveSubsystem configure() {
         var factory = new SwerveModuleConstantsFactory()
             .withDriveMotorGearRatio(6.746031746031747)
