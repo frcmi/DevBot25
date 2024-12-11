@@ -14,7 +14,6 @@ public interface Camera {
         public Pose2d pose;
         public Transform3d cameraToTarget;
         public int targetID;
-        public boolean hasTarget;
         public double maxAmbiguity, maxDistance, minDistance;
         
         public boolean isNew;
