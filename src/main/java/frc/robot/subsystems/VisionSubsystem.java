@@ -41,6 +41,7 @@ public final class VisionSubsystem implements Subsystem {
     private CameraData[] m_Cameras;
 
     private HashSet<Integer> m_ViableResults;
+    private int m_Frame;
 
     public static VisionSubsystem configure(SwerveSubsystem swerve) {
         var cameras = new CameraDescription[] { /* cameras */ };
@@ -68,6 +69,7 @@ public final class VisionSubsystem implements Subsystem {
     public VisionSubsystem(SwerveSubsystem swerve, CameraDescription[] cameras, AprilTagFieldLayout layout) {
         m_Swerve = swerve;
         m_ViableResults = new HashSet<>();
+        m_Frame = 0;
 
         m_Cameras = new CameraData[cameras.length];
         for (int i = 0; i < cameras.length; i++) {
@@ -122,7 +124,9 @@ public final class VisionSubsystem implements Subsystem {
         var pose = m_Swerve.getState().Pose;
 
         for (var camera : m_Cameras) {
-            camera.sim.update(pose);
+            camera.sim.update(pose, m_Frame);
         }
+
+        m_Frame++;
     }
 }

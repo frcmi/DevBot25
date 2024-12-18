@@ -6,7 +6,7 @@ import edu.wpi.first.math.geometry.Transform3d;
 
 public interface Camera {
     public static interface Simulator {
-        public void update(Pose2d pose);
+        public void update(Pose2d pose, int frame);
         public void reset(Pose2d pose);
     }
 
